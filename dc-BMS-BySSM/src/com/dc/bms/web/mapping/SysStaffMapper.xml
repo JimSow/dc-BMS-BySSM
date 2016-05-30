@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dc.bms.web.dao.SysStaffDao" >
+  <resultMap id="BaseResultMap" type="com.dc.bms.web.domain.SysStaff" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="BIT" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="orgId" property="orgid" jdbcType="BIGINT" />
+    <result column="positionId" property="positionid" jdbcType="BIGINT" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, sex, phone, orgId, positionId, address
+  </sql>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_staff
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteById" parameterType="java.lang.Long" >
+    delete from sys_staff
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.dc.bms.web.domain.SysStaff" >
+    insert into sys_staff (id, name, sex, phone, 
+      orgId, positionId, address
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=BIT}, #{phone,jdbcType=VARCHAR}, 
+      #{orgid,jdbcType=BIGINT}, #{positionid,jdbcType=BIGINT}, #{address,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateById" parameterType="com.dc.bms.web.domain.SysStaff" >
+    update sys_staff
+    set name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=BIT},
+      phone = #{phone,jdbcType=VARCHAR},
+      orgId = #{orgid,jdbcType=BIGINT},
+      positionId = #{positionid,jdbcType=BIGINT},
+      address = #{address,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

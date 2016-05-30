@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties>
+		<property name="dialect" value="MYSQL" />
+	</properties>
+	
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+ 
+	<typeAliases>
+		<typeAlias alias="SysUsers" type="com.dc.bms.web.domain.SysUsers" />
+		<typeAlias alias="Account" type="com.dc.bms.web.domain.Account" />
+	</typeAliases>
+
+<!--  
+	<plugins>
+	
+		<plugin interceptor="com.runlion.framework.orm.mybatis.page.PaginationInterceptor"></plugin>
+		
+	</plugins>-->
+	 
+	<mappers>
+		<mapper resource="com/dc/bms/web/mapping/SysResourceMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/SysRoleMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/SysRoleResourceMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/SysStaffMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/SysUserResourceMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/SysUserRoleMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/SysUsersMapper.xml" />
+	</mappers>
+
+</configuration>

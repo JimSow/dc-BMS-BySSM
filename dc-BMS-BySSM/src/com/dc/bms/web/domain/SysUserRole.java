@@ -22,11 +22,15 @@ public class SysUserRole {
      *ÓÃ»§id
      */
     private Long userid;
+    
+    private SysUsers sysUsers;
 
     /**
      *½ÇÉ«id
      */
     private Long roleid;
+    
+    private SysRole sysRole;
 
     public Long getId() {
         return id;
@@ -51,4 +55,20 @@ public class SysUserRole {
     public void setRoleid(Long roleid) {
         this.roleid = roleid;
     }
+
+	public SysUsers getSysUsers() {
+		return sysUsers;
+	}
+
+	public void setSysUsers(SysUsers sysUsers) {
+		this.sysUsers = sysUsers;
+	}
+
+	public SysRole getSysRole() {
+		return sysRole;
+	}
+
+	public void setSysRole(SysRole sysRole) {
+		this.sysRole = sysRole;
+	}
 }

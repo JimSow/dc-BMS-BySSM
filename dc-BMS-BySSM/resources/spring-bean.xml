@@ -10,14 +10,17 @@
 
 
 
-	<bean id="sysUsersDaoImpl" class="com.dc.bms.web.dao.Impl.SysUsersDaoImpl" />
-	<bean id="accountDaoImpl" class="com.dc.bms.web.dao.Impl.AccountDaoImpl" />
+	<bean id="sysUsersDao" class="com.dc.bms.web.dao.Impl.SysUsersDaoImpl" />
+	<bean id="accountDao" class="com.dc.bms.web.dao.Impl.AccountDaoImpl" />
+	<bean id="bmsUserDao" class="com.dc.bms.web.dao.Impl.BmsUserDaoImpl" />
+	<bean id="bmsMenuDao" class="com.dc.bms.web.dao.Impl.BmsMenuDaoImpl" />
 	
 	
 	
-	
-	
-	<bean id="loginServiceImpl" class="com.dc.bms.web.service.Impl.LoginServiceImpl" />
-	<bean id="sysUsersServiceImpl" class="com.dc.bms.web.service.Impl.SysUsersServiceImpl" />
+	<bean id="loginService" class="com.dc.bms.web.service.Impl.LoginServiceImpl" />
+	<bean id="sysUsersService" class="com.dc.bms.web.service.Impl.SysUsersServiceImpl" />
+	<bean id="bmsUserService" class="com.dc.bms.web.service.Impl.BmsUserServiceImpl" />
+	<bean id="bmsMenuService" class="com.dc.bms.web.service.Impl.BmsMenuServiceImpl" />
+	<bean id="menuResourceService" class="com.dc.bms.web.service.Impl.MenuResourceServiceImpl"></bean>
 	
 </beans>

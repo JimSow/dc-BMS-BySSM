@@ -1,2 +1,9 @@
 eclipse.preferences.version=1
+encoding//src/com/dc/bms/sys/ControllerBase.java=UTF-8
+encoding//src/com/dc/bms/sys/MybatisDaoBase.java=GBK
+encoding//src/com/dc/bms/web/controller/LoginController.java=UTF-8
+encoding//src/com/dc/bms/web/domain=GBK
+encoding//src/com/dc/bms/web/domain/Account.java=UTF-8
+encoding//src/com/dc/bms/web/domain/BmsMenu.java=GBK
+encoding//src/com/dc/bms/web/domain/SysRole.java=GBK
 encoding/<project>=UTF-8

@@ -1,18 +1,18 @@
 /*
- * SysUsers.java
+ * BmsUser.java
  * Copyright(C) 2016 dc com.dc公司
  * All rights reserved.
  * --------------------------------------------
- * 2016-05-20 Created
+ * 2016-05-30 Created
  */
 package com.dc.bms.web.domain;
 
 /**
- * sys_users
+ * bms_user
  * 
  * @author Administrator
  */
-public class SysUsers {
+public class BmsUser {
     /**
      *
      */
@@ -33,7 +33,7 @@ public class SysUsers {
      */
     private String address;
 
-	/**
+    /**
      *
      */
     private String email;
@@ -47,9 +47,25 @@ public class SysUsers {
      *
      */
     private String password;
+
+    /**
+     *
+     */
+    private String phone;
+
+    /**
+     *对应SYS_USER表中的id
+     */
+    private Long userid;
     
+    private SysUsers user;
+
+    /**
+     *员工id
+     */
+    private Long staffid;
     
-    private Account account;
+    private SysStaff staff;
 
     public Long getId() {
         return id;
@@ -107,11 +123,43 @@ public class SysUsers {
         this.password = password == null ? null : password.trim();
     }
 
-	public Account getAccount() {
-		return account;
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public Long getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Long userid) {
+        this.userid = userid;
+    }
+
+    public Long getStaffid() {
+        return staffid;
+    }
+
+    public void setStaffid(Long staffid) {
+        this.staffid = staffid;
+    }
+
+	public SysStaff getStaff() {
+		return staff;
 	}
 
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setStaff(SysStaff staff) {
+		this.staff = staff;
+	}
+
+	public SysUsers getUser() {
+		return user;
+	}
+
+	public void setUser(SysUsers user) {
+		this.user = user;
 	}
 }

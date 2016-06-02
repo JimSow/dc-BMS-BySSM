@@ -11,28 +11,28 @@ import com.dc.bms.web.service.ILoginService;
 public class LoginServiceImpl implements ILoginService{
 
 	@Autowired
-	private SysUsersDao sysUsersDaoImpl;
+	private SysUsersDao sysUsersDao;
 	
 	@Override
 	public int deleteById(Long id) {
-		sysUsersDaoImpl.deleteById(id);
+		sysUsersDao.deleteById(id);
 		return 0;
 	}
 
 	@Override
 	public int insert(SysUsers record) {
-		return sysUsersDaoImpl.insert(record);
+		return sysUsersDao.insert(record);
 	}
 
 	@Override
 	public SysUsers selectById(Long id) {
-		SysUsers u = sysUsersDaoImpl.selectById(id);
+		SysUsers u = sysUsersDao.selectById(id);
 		return u;
 	}
 
 	@Override
 	public int updateById(SysUsers record) {
-		sysUsersDaoImpl.updateById(record);
+		sysUsersDao.updateById(record);
 		return 0;
 	}
 

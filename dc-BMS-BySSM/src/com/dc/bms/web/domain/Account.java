@@ -1,6 +1,6 @@
 package com.dc.bms.web.domain;
 
-import com.dc.internal.util.EncryptUtil;
+import com.dc.util.EncryptUtil;
 
 /**
  * 账户，就是用户名和密码

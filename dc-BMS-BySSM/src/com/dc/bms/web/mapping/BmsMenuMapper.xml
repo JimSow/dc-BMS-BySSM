@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="bmsMenu">
+	<resultMap id="baseResultMap" type="BmsMenu">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="pMenuId" property="pmenuid" jdbcType="BIGINT" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="uri" property="uri" jdbcType="VARCHAR" />
+		<result column="disOrder" property="disorder" jdbcType="BIGINT" />
+		<result column="rank" property="rank" jdbcType="BIGINT" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, pMenuId, name, uri, disOrder, rank
+	</sql>
+	<select id="selectById" resultMap="baseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from bms_menu
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteById" parameterType="java.lang.Long">
+		delete from bms_menu
+		where
+		id = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="BmsMenu">
+		insert into bms_menu (id,
+		pMenuId, name,
+		uri, disOrder, rank)
+		values (#{id,jdbcType=BIGINT},
+		#{pmenuid,jdbcType=BIGINT},
+		#{name,jdbcType=VARCHAR},
+		#{uri,jdbcType=VARCHAR}, #{disorder,jdbcType=BIGINT},
+		#{rank,jdbcType=BIGINT})
+	</insert>
+	<update id="updateById" parameterType="BmsMenu">
+		update bms_menu
+		set pMenuId
+		= #{pmenuid,jdbcType=BIGINT},
+		name = #{name,jdbcType=VARCHAR},
+		uri =
+		#{uri,jdbcType=VARCHAR},
+		disOrder = #{disorder,jdbcType=BIGINT},
+		rank =
+		#{rank,jdbcType=BIGINT}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
+	<!-- add -->
+	<resultMap id="menuMapV" type="BmsMenu">
+		<id property="id" column="id" />
+		<result property="parentMenu.id" column="pMenuId" />
+		<result property="name" column="name" />
+		<result property="uri" column="uri" />
+		<result property="disOrder" column="disOrder" />
+		<result property="rank" column="rank" />
+	</resultMap>
+	
+	<select id="getMenuListByAll" resultMap="menuMapV">
+		<![CDATA[
+		SELECT c.id, 
+		case when c.pMenuId!=0 then c.pMenuId end as pMenuId,
+		c.name, c.uri, c.disOrder, c.rank from bms_menu c ORDER BY c.disOrder
+		]]>
+	</select>
+</mapper>

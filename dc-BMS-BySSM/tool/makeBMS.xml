@@ -2,7 +2,7 @@
  <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 	<generatorConfiguration>
      <!-- 数据库驱动包位置 -->
-      <classPathEntry location="D:\workspaceEE\dc-tfw-wp-byMaven\weblib\mysql-connector-java-5.1.35-bin.jar" /> 
+      <classPathEntry location="D:\workspaceGIT\dc-BMS-BySSM\dc-BMS-BySSM\WebContent\WEB-INF\lib\mysql-connector-java-5.1.35-bin.jar" /> 
       <!-- <classPathEntry location="C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar" />-->
       <context id="DB2Tables" targetRuntime="MyBatis3">
           <commentGenerator>
@@ -18,16 +18,16 @@
              <property name="forceBigDecimals" value="false" />
          </javaTypeResolver>
          <!-- 生成实体类的包名和位置，这里配置将生成的实体类放在me.gacl.domain这个包下 -->
-         <javaModelGenerator targetPackage="com.dc.bms.web.domain" targetProject="D:\workspaceEE\dc-BMS-BySSM\src">
+         <javaModelGenerator targetPackage="com.dc.bms.web.domain" targetProject="D:\workspaceGIT\dc-BMS-BySSM\dc-BMS-BySSM\src">
              <property name="enableSubPackages" value="true" />
              <property name="trimStrings" value="true" />
          </javaModelGenerator>
          <!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在me.gacl.mapping这个包下 -->
-         <sqlMapGenerator targetPackage="com.dc.bms.web.mapping" targetProject="D:\workspaceEE\dc-BMS-BySSM\src">
+         <sqlMapGenerator targetPackage="com.dc.bms.web.mapping" targetProject="D:\workspaceGIT\dc-BMS-BySSM\dc-BMS-BySSM\src">
              <property name="enableSubPackages" value="true" />
          </sqlMapGenerator>
          <!-- 生成DAO的包名和位置，这里配置将生成的dao类放在me.gacl.dao这个包下 -->
-         <javaClientGenerator type="XMLMAPPER" targetPackage="com.dc.bms.web.dao" targetProject="D:\workspaceEE\dc-BMS-BySSM\src">
+         <javaClientGenerator type="XMLMAPPER" targetPackage="com.dc.bms.web.dao" targetProject="D:\workspaceGIT\dc-BMS-BySSM\dc-BMS-BySSM\src">
              <property name="enableSubPackages" value="true" />
          </javaClientGenerator>
           <!-- 要生成那些表(更改tableName和domainObjectName就可以)
@@ -37,9 +37,9 @@
 		 <table tableName="sys_staff" domainObjectName="SysStaff"  />
 		 <table tableName="sys_role_resource" domainObjectName="SysRoleResource"  />
 		 <table tableName="sys_role" domainObjectName="SysRole"  />
-		 <table tableName="sys_resource" domainObjectName="SysResource" /> -->
-		 
-		  <table tableName="sys_user_role" domainObjectName="SysUserRole"  />
+		 <table tableName="sys_resource" domainObjectName="SysResource" /> 
+		  <table tableName="bms_menu" domainObjectName="BmsMenu"  />
+		  <table tableName="bms_user" domainObjectName="BmsUser"  />-->
      </context>
  </generatorConfiguration>
 

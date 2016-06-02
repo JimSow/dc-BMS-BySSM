@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="bmsUser" >
+  <resultMap id="bmsUserMap" type="BmsUser" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="loginName" property="loginname" jdbcType="VARCHAR" />
+    <result column="passWord" property="password" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="userId" property="userid" jdbcType="BIGINT" />
+    <result column="staffId" property="staffid" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, age, address, email, loginName, passWord, phone, userId, staffId
+  </sql>
+  <select id="selectById" resultMap="bmsUserMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from bms_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteById" parameterType="java.lang.Long" >
+    delete from bms_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="BmsUser" >
+    insert into bms_user (id, name, age, 
+      address, email, loginName, 
+      passWord, phone, userId, 
+      staffId)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{address,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{loginname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{userid,jdbcType=BIGINT}, 
+      #{staffid,jdbcType=BIGINT})
+  </insert>
+  <update id="updateById" parameterType="BmsUser" >
+    update bms_user
+    set name = #{name,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      loginName = #{loginname,jdbcType=VARCHAR},
+      passWord = #{password,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      userId = #{userid,jdbcType=BIGINT},
+      staffId = #{staffid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <!-- add -->
+  <resultMap id="bmsUserMapV" type="BmsUser">
+		<id property="id" column="id" />
+		<result property="user.id" column="userId" />
+		<result property="user.account.loginName" column="loginName" />
+		<result property="user.account.passWord" column="passWord" />
+		<result property="user.name" column="name" />
+		<result property="user.age" column="age" />
+		<result property="user.address" column="address" />
+		<result property="user.email" column="email" />
+		<result property="staff.id" column="staffId" />
+		<result property="staff.name" column="staffName" />
+		<result property="staff.sex" column="staffSex" />
+		<result property="phone" column="phone" />
+		<result property="staff.organization.id" column="orgId" />
+		<result property="staff.organization.name" column="orgName" />
+		<result property="staff.position.id" column="positionId"/>
+		<result property="staff.position.name" column="positionName"/>
+	</resultMap>
+	
+	
+  <select id="getBmsUserByAccount" resultMap="bmsUserMapV">
+		<![CDATA[
+		SELECT u.id, u.name, u.age, u.address, u.email, u.loginName, u.passWord, u.phone, u.userId 
+			FROM BMS_USER u WHERE u.loginName = #{loginName}
+		]]>
+	</select>
+</mapper>

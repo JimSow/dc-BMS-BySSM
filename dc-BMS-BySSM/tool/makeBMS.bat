@@ -1,5 +1,5 @@
 @echo off
-echo "正在生成BMS的dao,mapping,service文件"
+echo "姝ｅ湪鐢熸垚BMS鐨刣ao,mapping,service鏂囦欢" 
 
 java -jar dcTool-MCG.jar -configfile makeBMS.xml -overwrite
 @pause

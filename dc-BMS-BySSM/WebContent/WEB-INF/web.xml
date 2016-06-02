@@ -77,4 +77,17 @@
 		<error-code>500</error-code>
 		<location>/error/500.jsp</location>
 	</error-page>
+	<!-- 
+	<error-page>
+	   <error-code>javax.servlet.ServletException</error-code>
+	   <location>/error/error.html</location>
+	 </error-page>
+	 <error-page>
+	   <error-code>java.lang.NullPointerException</error-code>
+	   <location>/error/error.html</location>
+	 </error-page>
+	  -->
+	 <session-config>
+		<session-timeout>300</session-timeout>
+	</session-config>
 </web-app>

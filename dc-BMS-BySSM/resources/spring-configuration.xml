@@ -14,6 +14,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias alias="SysUsers" type="com.dc.bms.web.domain.SysUsers" />
 		<typeAlias alias="Account" type="com.dc.bms.web.domain.Account" />
+		<typeAlias alias="BmsMenu" type="com.dc.bms.web.domain.BmsMenu" />
+		<typeAlias alias="BmsUser" type="com.dc.bms.web.domain.BmsUser" />
 	</typeAliases>
 
 <!--  
@@ -31,6 +33,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/dc/bms/web/mapping/SysUserResourceMapper.xml" />
 		<mapper resource="com/dc/bms/web/mapping/SysUserRoleMapper.xml" />
 		<mapper resource="com/dc/bms/web/mapping/SysUsersMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/BmsUserMapper.xml" />
+		<mapper resource="com/dc/bms/web/mapping/BmsMenuMapper.xml" />
 	</mappers>
 
 </configuration>

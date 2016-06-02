@@ -2,15 +2,16 @@ package com.dc.bms.web.service.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.dc.bms.web.dao.SysUsersDao;
+import com.dc.bms.web.dao.BmsUserDao;
 import com.dc.bms.web.domain.Account;
-import com.dc.bms.web.domain.SysUsers;
-import com.dc.bms.web.service.ISysUsersService;
+import com.dc.bms.web.domain.BmsUser;
+import com.dc.bms.web.service.IBmsUserService;
 
-public class SysUsersServiceImpl implements ISysUsersService {
+public class BmsUserServiceImpl implements IBmsUserService {
 
 	@Autowired
-	private SysUsersDao sysUsersDao;
+	private BmsUserDao bmsUserDao;
+	
 	
 	@Override
 	public int deleteById(Long id) {
@@ -19,27 +20,27 @@ public class SysUsersServiceImpl implements ISysUsersService {
 	}
 
 	@Override
-	public int insert(SysUsers record) {
+	public int insert(BmsUser record) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public SysUsers selectById(Long id) {
+	public BmsUser selectById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int updateById(SysUsers record) {
+	public int updateById(BmsUser record) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public Account getAccountByLoginName(String loginName) {
-		Account ac = sysUsersDao.getAccountByLoginName(loginName);
-		return ac;
+	public BmsUser getBmsUserByAccount(Account account) {
+		BmsUser u = bmsUserDao.getBmsUserByAccount(account);
+		return u;
 	}
 
 }

@@ -22,11 +22,15 @@ public class SysRoleResource {
      *½ÇÉ«id
      */
     private Long roleid;
+    
+    private SysRole sysRole;
 
     /**
      *×ÊÔ´id
      */
     private Long resourceid;
+    
+    private SysResource sysResource;
 
     public Long getId() {
         return id;
@@ -51,4 +55,20 @@ public class SysRoleResource {
     public void setResourceid(Long resourceid) {
         this.resourceid = resourceid;
     }
+
+	public SysRole getSysRole() {
+		return sysRole;
+	}
+
+	public void setSysRole(SysRole sysRole) {
+		this.sysRole = sysRole;
+	}
+
+	public SysResource getSysResource() {
+		return sysResource;
+	}
+
+	public void setSysResource(SysResource sysResource) {
+		this.sysResource = sysResource;
+	}
 }

@@ -3,12 +3,12 @@ package com.dc.bms.web.viewobj;
 /**
  * 通用的业务服务结果
  */
-public class CommonBsnsServResult extends BsnsServResult {
+public class CBsnsServResult extends BsnsServResult {
 
 	private String returnResult;
 	
 	
-	public CommonBsnsServResult(String returnResult,boolean success) {
+	public CBsnsServResult(String returnResult,boolean success) {
 		this.returnResult = returnResult;
 		this.success = success;
 	}
